@@ -1,0 +1,320 @@
+﻿export const translations = {
+  en: {
+    nav: {
+      home: 'Home',
+      services: 'Services',
+      howItWorks: 'How It Works',
+      whyCoop: 'About Cooperative',
+      trustStats: 'Impact',
+      login: 'Login',
+      getStarted: 'Get Started'
+    },
+    hero: {
+      sihBadge: 'SIH Problem Statement 26089 • Worker-Owned Platform',
+      headline: 'Trusted Services. Fair Work. Stronger Communities.',
+      subheadline: 'Connect with verified local service professionals while supporting a worker-owned cooperative ecosystem.',
+      bookBtn: 'Book a Service',
+      joinBtn: 'Join as a Worker',
+      activeMembers: 'Verified Worker-Owners On Duty',
+      dividendTicker: '₹2.45 Cr+ Paid in Cooperative Dividends',
+      fairGuarantee: '88% Direct Payout to Skilled Professionals'
+    },
+    search: {
+      title: 'What service do you need?',
+      serviceLabel: 'Service',
+      servicePlaceholder: 'Choose service category...',
+      locationLabel: 'Location',
+      locationPlaceholder: 'Enter your locality (e.g., Kothrud, Pune)',
+      dateTimeLabel: 'Date & Time Slot',
+      dateTimePlaceholder: 'Today, Next Available',
+      findBtn: 'Find a Worker',
+      quickTagsLabel: 'Quick Book:',
+      detectLocation: 'Detect location'
+    },
+    services: {
+      badge: 'Transparent Cooperative Rate Card',
+      title: 'Popular Services',
+      subtitle: 'Standard pricing established by worker-customer collective panels. No artificial surge fees.',
+      startingFrom: 'Starting from',
+      avgTime: 'Avg Arrival',
+      warranty: 'Warranty',
+      activePros: 'Active Pros',
+      bookBtn: 'Book Now',
+      detailsBtn: 'View Details'
+    },
+    howItWorks: {
+      badge: 'Fair & Seamless Process',
+      title: 'How It Works',
+      subtitle: '4 transparent steps connecting conscious households with dignified, skilled service professionals.',
+      step1Num: '01',
+      step1Title: 'Choose a Service',
+      step1Desc: 'Browse verified rate cards with transparent parts pricing and zero surge manipulation.',
+      step2Num: '02',
+      step2Title: 'Find a Verified Worker',
+      step2Desc: 'Directly match with certified, police-verified worker-owners from your local ward hub.',
+      step3Num: '03',
+      step3Title: 'Book and Pay Securely',
+      step3Desc: 'Digital escrow holds your payment safely. 88% is disbursed immediately upon completion.',
+      step4Num: '04',
+      step4Title: 'Rate and Support the Cooperative',
+      step4Desc: 'Your ratings boost worker dividends and support community social security funds.'
+    },
+    whyCoop: {
+      badge: 'The Cooperative Advantage',
+      title: 'Why WorkerEMP?',
+      subtitle: 'Moving beyond predatory marketplace commissions to a sustainable, community-owned future.',
+      card1Title: 'Verified Workers',
+      card1Desc: '100% background-checked, skill-assessed craftsmen with continuous peer quality auditing.',
+      card2Title: 'Fair Earning Opportunities',
+      card2Desc: 'Workers receive 88% of booking revenue + annual dividends from cooperative operating surplus.',
+      card3Title: 'Transparent Pricing',
+      card3Desc: 'Clear, standardized tariff charts approved by municipal consumer and worker councils.',
+      card4Title: 'Worker Welfare',
+      card4Desc: 'Complete social safety net: ESI health insurance, ₹5L accident cover, and emergency credit pool.',
+      card5Title: 'Community-Driven Decisions',
+      card5Desc: 'Democratic 1-Worker = 1-Vote governance. Workers vote on platform features, rules, and tariffs.',
+      card6Title: 'Trusted Local Services',
+      card6Desc: 'Decentralized ward hubs enable swift 30–45 minute arrivals and guaranteed 30-day work warranties.',
+      compareHeading: 'WorkerEMP Cooperative vs Traditional Gig Apps',
+      metricPill: '88% vs 60% Worker Take-Home'
+    },
+    trust: {
+      badge: 'Public Cooperative Registry',
+      title: 'Real Impact. Real Ownership.',
+      subtitle: 'Open metrics reflecting the transformation of local gig work into dignified cooperative enterprise.',
+      workerSpotlightTitle: 'Meet Our Worker-Owners',
+      workerSpotlightSubtitle: 'Hear from the skilled professionals who co-own and operate WorkerEMP in your neighborhood.'
+    },
+    finalCta: {
+      headline: 'Need a service? Find trusted help near you.',
+      subtitle: 'Experience dependable, verified household services while supporting local workers who take genuine pride in their cooperative.',
+      bookBtn: 'Book a Service',
+      joinBtn: 'Become a Cooperative Member',
+      perk1: 'Standard Transparent Pricing',
+      perk2: '30-Day Service Warranty',
+      perk3: '100% Police Verified'
+    },
+    footer: {
+      aboutTitle: 'About WorkerEMP',
+      aboutDesc: 'India’s premier worker-owned cooperative gig platform under SIH 26089, democratizing service delivery for households and ensuring fair wages.',
+      sihTag: 'Built for Smart India Hackathon 2026',
+      linksTitle: 'Platform',
+      servicesTitle: 'Services',
+      coopTitle: 'Cooperative Governance',
+      contactTitle: 'Support & Grievance',
+      registeredNotice: 'Operating under Multi-State Cooperative Societies Framework. All rights reserved.'
+    }
+  },
+  hi: {
+    nav: {
+      home: 'होम',
+      services: 'सेवाएँ',
+      howItWorks: 'यह कैसे काम करता है',
+      whyCoop: 'सहकारी मंच के बारे में',
+      trustStats: 'प्रभाव',
+      login: 'लॉग इन',
+      getStarted: 'शुरुआत करें'
+    },
+    hero: {
+      sihBadge: 'SIH समस्या विवरण 26089 • श्रमिक-स्वामित्व वाला सहकारी मंच',
+      headline: 'विश्वसनीय सेवाएँ। सम्मानजनक कार्य। सशक्त समाज।',
+      subheadline: 'सत्यापित स्थानीय कुशल सेवा पेशेवरों से जुड़ें और श्रमिक-स्वामित्व वाले सहकारी तंत्र को सुदृढ़ बनाएं।',
+      bookBtn: 'सेवा बुक करें',
+      joinBtn: 'श्रमिक सदस्य बनें',
+      activeMembers: 'सत्यापित श्रमिक सह-मालिक सेवा में तत्पर',
+      dividendTicker: '₹2.45 करोड़+ सहकारी लाभांश वितरित',
+      fairGuarantee: '88% सीधी कमाई कुशल श्रमिकों के खाते में'
+    },
+    search: {
+      title: 'आपको किस सेवा की आवश्यकता है?',
+      serviceLabel: 'सेवा चुनें',
+      servicePlaceholder: 'सेवा श्रेणी का चयन करें...',
+      locationLabel: 'स्थान / इलाका',
+      locationPlaceholder: 'अपना इलाका दर्ज करें (उदा. कोथरुड, पुणे)',
+      dateTimeLabel: 'तारीख व समय स्लॉट',
+      dateTimePlaceholder: 'आज, उपलब्ध स्लॉट',
+      findBtn: 'श्रमिक खोजें',
+      quickTagsLabel: 'त्वरित बुकिंग:',
+      detectLocation: 'वर्तमान स्थान प्राप्त करें'
+    },
+    services: {
+      badge: 'पारदर्शी सहकारी दर सूची',
+      title: 'लोकप्रिय सेवाएँ',
+      subtitle: 'श्रमिक और ग्राहक संयुक्त समिति द्वारा निर्धारित मानक मूल्य। कोई कृत्रिम सर्ज शुल्क नहीं।',
+      startingFrom: 'न्यूनतम दर',
+      avgTime: 'औसत आगमन',
+      warranty: 'वारंटी',
+      activePros: 'सक्रिय श्रमिक',
+      bookBtn: 'बुक करें',
+      detailsBtn: 'विवरण देखें'
+    },
+    howItWorks: {
+      badge: 'पारदर्शी व सरल प्रक्रिया',
+      title: 'यह कैसे काम करता है',
+      subtitle: '4 आसान कदम जो सम्मानजनक आजीविका और गुणवत्तापूर्ण सेवा को एक साथ लाते हैं।',
+      step1Num: '01',
+      step1Title: 'सेवा चुनें',
+      step1Desc: 'पारदर्शी दर कार्ड और बिना किसी छुपे शुल्क के अपनी आवश्यक सेवा का चयन करें।',
+      step2Num: '02',
+      step2Title: 'सत्यापित श्रमिक से जुड़ें',
+      step2Desc: 'अपने नजदीकी वार्ड हब से पुलिस-सत्यापित और कुशल श्रमिक सह-मालिक से सीधा संपर्क।',
+      step3Num: '03',
+      step3Title: 'सुरक्षित बुकिंग और भुगतान',
+      step3Desc: 'सुरक्षित एस्क्रो भुगतान। काम पूरा होने पर 88% सीधे श्रमिक के बैंक खाते में जमा।',
+      step4Num: '04',
+      step4Title: 'रेटिंग दें व सहकारिता का समर्थन करें',
+      step4Desc: 'आपकी रेटिंग से श्रमिकों को वार्षिक लाभांश और सामाजिक सुरक्षा कोष में लाभ मिलता है।'
+    },
+    whyCoop: {
+      badge: 'सहकारिता का सामर्थ्य',
+      title: 'WorkerEMP ही क्यों?',
+      subtitle: 'शोषणकारी बिचौलियों से परे, आत्मनिर्भर और न्यायसंगत भविष्य का निर्माण।',
+      card1Title: 'सत्यापित कुशल श्रमिक',
+      card1Desc: '100% पृष्ठभूमि और कौशल जांचे हुए स्थानीय कारीगर।',
+      card2Title: 'उचित आय के अवसर',
+      card2Desc: 'प्रत्येक कार्य का 88% हिस्सा श्रमिक को, साथ ही वार्षिक सहकारी लाभ लाभांश।',
+      card3Title: 'पारदर्शी दरें',
+      card3Desc: 'सामुदायिक समिति द्वारा स्वीकृत निश्चित मूल्य, कोई सर्ज चार्ज नहीं।',
+      card4Title: 'श्रमिक कल्याण व सुरक्षा',
+      card4Desc: 'ईएसआई स्वास्थ्य सुरक्षा, ₹5 लाख दुर्घटना बीमा और आपातकालीन निधि।',
+      card5Title: 'लोकतांत्रिक निर्णय प्रक्रिया',
+      card5Desc: '1 श्रमिक = 1 वोट। श्रमिक स्वयं नियम और दरें तय करते हैं।',
+      card6Title: 'भरोसेमंद स्थानीय सेवाएँ',
+      card6Desc: 'वार्ड स्तर पर 30-45 मिनट में त्वरित सेवा और 30 दिनों की काम की गारंटी।',
+      compareHeading: 'WorkerEMP सहकारी मंच बनाम पारंपरिक गिग कंपनियाँ',
+      metricPill: '88% बनाम 60% श्रमिक की जेब में'
+    },
+    trust: {
+      badge: 'खुला सहकारी ऑडिट',
+      title: 'वास्तविक प्रभाव। वास्तविक स्वामित्व।',
+      subtitle: 'पारदर्शी आंकड़े जो दिखाते हैं कि कैसे गिग वर्क एक सम्मानित सहकारिता में बदल रहा है।',
+      workerSpotlightTitle: 'हमारे श्रमिक मालिकों से मिलें',
+      workerSpotlightSubtitle: 'जानिए उन कुशल सदस्यों से जो WorkerEMP के सह-मालिक हैं।'
+    },
+    finalCta: {
+      headline: 'किसी सेवा की जरूरत है? अपने पास विश्वसनीय मदद पाएं।',
+      subtitle: 'विश्वसनीय घरेलू सेवा प्राप्त करें और उन श्रमिकों का समर्थन करें जो अपने काम के वास्तविक मालिक हैं।',
+      bookBtn: 'सेवा बुक करें',
+      joinBtn: 'सहकारी सदस्य बनें',
+      perk1: 'मानक पारदर्शी दरें',
+      perk2: '30-दिन सेवा वारंटी',
+      perk3: '100% पुलिस सत्यापित'
+    },
+    footer: {
+      aboutTitle: 'WorkerEMP के बारे में',
+      aboutDesc: 'SIH 26089 के अंतर्गत भारत का पहला श्रमिक-स्वामित्व वाला सहकारी गिग प्लेटफॉर्म।',
+      sihTag: 'स्मार्ट इंडिया हैकथॉन 2026 हेतु विकसित',
+      linksTitle: 'प्लेटफॉर्म',
+      servicesTitle: 'सेवाएँ',
+      coopTitle: 'सहकारी शासन',
+      contactTitle: 'संपर्क एवं शिकायत निवारण',
+      registeredNotice: 'मल्टी-स्टेट कोऑपरेटिव सोसाइटीज ढांचे के तहत संचालित। सर्वाधिकार सुरक्षित।'
+    }
+  },
+  mr: {
+    nav: {
+      home: 'मुख्यपृष्ठ',
+      services: 'सेवा',
+      howItWorks: 'कार्यपद्धती',
+      whyCoop: 'सहकारी संस्थेबद्दल',
+      trustStats: 'प्रभाव',
+      login: 'लॉगिन',
+      getStarted: 'सुरुवात करा'
+    },
+    hero: {
+      sihBadge: 'SIH समस्या विवरण 26089 • कामगार-मालकीचा सहकारी मंच',
+      headline: 'विश्वसनीय सेवा. सन्मानपूर्वक काम. सक्षम समाज.',
+      subheadline: 'सत्यापित स्थानिक कुशल कामगारांशी जोडा आणि कामगार-मालकीच्या सहकारी परिसंस्थेला बळ द्या.',
+      bookBtn: 'सेवा बुक करा',
+      joinBtn: 'कामगार सदस्य व्हा',
+      activeMembers: 'सत्यापित कामगार सह-मालक सेवेत कार्यरत',
+      dividendTicker: '₹2.45 कोटी+ सहकारी लाभांश वाटप',
+      fairGuarantee: '88% थेट मोबदला कुशल कामगारांच्या खात्यात'
+    },
+    search: {
+      title: 'तुम्हाला कोणती सेवा हवी आहे?',
+      serviceLabel: 'सेवा निवडा',
+      servicePlaceholder: 'सेवेचा प्रकार निवडा...',
+      locationLabel: 'परिसर / शहर',
+      locationPlaceholder: 'तुमचा परिसर टाका (उदा. कोथरूड, पुणे)',
+      dateTimeLabel: 'तारीख व वेळ स्लॉट',
+      dateTimePlaceholder: 'आज, उपलब्ध वेळ',
+      findBtn: 'कामगार शोधा',
+      quickTagsLabel: 'जलद बुकिंग:',
+      detectLocation: 'सध्याचे स्थान मिळवा'
+    },
+    services: {
+      badge: 'पारदर्शक सहकारी दरपत्रक',
+      title: 'लोकप्रिय सेवा',
+      subtitle: 'कामगार आणि ग्राहक संयुक्त समितीने ठरवलेले प्रमाणबद्ध दर. कोणतीही अचानक भाववाढ नाही.',
+      startingFrom: 'किमान दर',
+      avgTime: 'सरासरी वेळ',
+      warranty: 'हमी (वॉरंटी)',
+      activePros: 'कार्यरत कारागीर',
+      bookBtn: 'बुक करा',
+      detailsBtn: 'तपशील पहा'
+    },
+    howItWorks: {
+      badge: 'सोपी व पारदर्शक पद्धती',
+      title: 'हे कसे कार्य करते',
+      subtitle: '4 सोप्या पायऱ्या ज्या घरगुती सेवा आणि कामगारांचा सन्मान जोडतात.',
+      step1Num: '01',
+      step1Title: 'सेवा निवडा',
+      step1Desc: 'पारदर्शक दरपत्रकासह तुमच्या गरजेनुसार योग्य सेवेची निवड करा.',
+      step2Num: '02',
+      step2Title: 'प्रमाणित कामगार मिळवा',
+      step2Desc: 'स्थानिक वॉर्डमधून पोलीस-पडताळणी झालेले कुशल कामगार सदस्य लगेच उपलब्ध.',
+      step3Num: '03',
+      step3Title: 'सुरक्षित बुकिंग आणि पेमेंट',
+      step3Desc: 'सुरक्षित एस्क्रो पेमेंट. काम पूर्ण झाल्यावर 88% रक्कम थेट कामगाराच्या खात्यात जमा.',
+      step4Num: '04',
+      step4Title: 'रेटिंग द्या व सहकाराला साथ द्या',
+      step4Desc: 'तुमच्या अभिप्रायमुळे कामगारांना वार्षिक नफा लाभांश आणि कल्याण निधीचा फायदा मिळतो.'
+    },
+    whyCoop: {
+      badge: 'सहकाराची ताकद',
+      title: 'WorkerEMP का निवडावे?',
+      subtitle: 'नफेखोर मध्यस्थांऐवजी कामगारांच्या मालकीचा स्वावलंबी मंच.',
+      card1Title: 'प्रमाणित कुशल कारागीर',
+      card1Desc: '100% पार्श्वभूमी पडताळणी झालेले स्थानिक अनुभवी कारागीर.',
+      card2Title: 'न्याय्य उत्पन्नाची संधी',
+      card2Desc: 'प्रत्येक कामाचा 88% थेट वाटा कामगाराला + वार्षिक सहकारी नफ्यातून लाभांश.',
+      card3Title: 'पारदर्शक दरपत्रक',
+      card3Desc: 'सामुदायिक समितीने ठरवलेले निश्चित दर, कोणत्याही छुपे शुल्काशिवाय.',
+      card4Title: 'कामगार कल्याण व सुरक्षा',
+      card4Desc: 'ईएसआय आरोग्य संरक्षण, ₹5 लाख अपघात विमा आणि आपत्कालीन पतनिधी.',
+      card5Title: 'लोकशाही निर्णयप्रक्रिया',
+      card5Desc: '1 कामगार = 1 मत. कामगार स्वतः धोरणे आणि दर ठरवण्यात सहभागी होतात.',
+      card6Title: 'विश्वासार्ह स्थानिक सेवा',
+      card6Desc: 'वॉर्ड पातळीवर 30 ते 45 मिनिटांत सेवा आणि 30 दिवसांची काम वॉरंटी.',
+      compareHeading: 'WorkerEMP सहकारी संस्था विरुद्ध इतर व्यावसायिक ॲप्स',
+      metricPill: '88% विरुद्ध 60% कामगारांची प्रत्यक्ष कमाई'
+    },
+    trust: {
+      badge: 'खुला सहकारी ताळेबंद',
+      title: 'खरा प्रभाव. खरे मालकी हक्क.',
+      subtitle: 'पारदर्शक आकडेवारी जी दाखवते की गिग कामगारांचे सबलीकरण कसे होत आहे.',
+      workerSpotlightTitle: 'आमच्या कामगार मालकांना भेटा',
+      workerSpotlightSubtitle: 'WorkerEMP चे सह-मालक असणाऱ्या कारागिरांचे अनुभव जाणून घ्या.'
+    },
+    finalCta: {
+      headline: 'काही कामाची गरज आहे? जवळचा विश्वासू कारागीर मिळवा.',
+      subtitle: 'घरगुती सेवा खात्रीशीरपणे मिळवा आणि स्वतःच्या कामावर अभिमान बाळगणाऱ्या कारागिरांना साथ द्या.',
+      bookBtn: 'सेवा बुक करा',
+      joinBtn: 'सहकारी सभासद व्हा',
+      perk1: 'प्रमाणबद्ध पारदर्शक दर',
+      perk2: '30-दिवस काम वॉरंटी',
+      perk3: '100% पोलीस पडताळणी'
+    },
+    footer: {
+      aboutTitle: 'WorkerEMP बद्दल',
+      aboutDesc: 'SIH 26089 अंतर्गत भारताचा अग्रगण्य कामगार-मालकीचा सहकारी सेवा मंच.',
+      sihTag: 'स्मार्ट इंडिया हॅकेथॉन 2026 साठी विकसित',
+      linksTitle: 'प्लॅटफॉर्म',
+      servicesTitle: 'सेवा प्रकार',
+      coopTitle: 'सहकारी कारभार',
+      contactTitle: 'संपर्क व तक्रार निवारण',
+      registeredNotice: 'मल्टी-स्टेट कोऑपरेटिव्ह सोसायटी कायद्यानुसार संचलित. सर्व हक्क राखीव.'
+    }
+  }
+};
