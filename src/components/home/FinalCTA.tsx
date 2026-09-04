@@ -1,93 +1,77 @@
-﻿import React from 'react';
-import { 
-  ArrowRight, 
-  HeartHandshake, 
-  ShieldCheck, 
-  CheckCircle2, 
-  Sparkles,
-  Users
-} from 'lucide-react';
+import React from 'react';
+import { UserCheck, Building2 } from 'lucide-react';
 import { Language, ModalType } from '../../types';
-import { translations } from '../../data/translations';
 
 interface FinalCTAProps {
-  currentLang: Language;
+  currentLang?: Language;
   onOpenModal: (type: ModalType) => void;
 }
 
 export const FinalCTA: React.FC<FinalCTAProps> = ({
-  currentLang,
   onOpenModal
 }) => {
-  const t = translations[currentLang];
-
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-slate-100 relative overflow-hidden">
+    <section className="py-8 pb-14 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative bg-gradient-to-tr from-brand-900 via-slate-900 to-coop-950 rounded-3xl p-8 sm:p-14 text-white shadow-elevated border border-slate-700/80 overflow-hidden">
+        
+        {/* Dark Forest Green Container matching Reference */}
+        <div className="relative bg-[#0c3826] rounded-3xl p-6 sm:p-8 lg:p-10 text-white shadow-xl border border-emerald-800/40 overflow-hidden">
           
-          {/* Decorative background glows */}
-          <div className="absolute top-0 right-0 -mr-24 -mt-24 w-96 h-96 rounded-full bg-brand-500/20 blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 left-0 -ml-24 -mb-24 w-96 h-96 rounded-full bg-coop-500/20 blur-3xl pointer-events-none" />
-          
-          <div className="relative z-10 max-w-3xl mx-auto text-center space-y-6">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 relative z-10">
             
-            {/* Cooperative badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold text-brand-300 bg-brand-950/80 border border-brand-500/30">
-              <Sparkles className="w-3.5 h-3.5 text-brand-400" />
-              <span>SIH Problem Statement 26089 • Smart Cooperative Economy</span>
+            {/* Left/Center: Illustration + Copy */}
+            <div className="flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left">
+              
+              {/* Illustrated Workers Strip Thumbnail */}
+              <div className="relative w-44 sm:w-56 h-28 rounded-2xl overflow-hidden shadow-md shrink-0 border border-emerald-700/50 bg-[#072418]">
+                <img
+                  src="/images/rozgar_workers_strip.jpg"
+                  alt="Rozgar Worker Collective"
+                  className="w-full h-full object-cover object-center"
+                />
+              </div>
+
+              {/* Text Block */}
+              <div className="space-y-2">
+                <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight leading-tight">
+                  Let's build better opportunities, together.
+                </h2>
+                <p className="text-xs sm:text-sm text-emerald-100/90 max-w-xl leading-relaxed font-normal">
+                  Join Rozgar today and be a part of a movement that empowers workers and strengthens communities.
+                </p>
+              </div>
+
             </div>
 
-            {/* Headline */}
-            <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
-              {t.finalCta.headline}
-            </h2>
-
-            {/* Subtitle */}
-            <p className="text-base sm:text-lg text-slate-300 font-normal max-w-2xl mx-auto leading-relaxed">
-              {t.finalCta.subtitle}
-            </p>
-
-            {/* Dual CTAs */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-              <button
-                type="button"
-                onClick={() => onOpenModal('booking')}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl text-base font-bold text-white bg-gradient-to-r from-brand-500 via-brand-600 to-coop-600 hover:from-brand-600 hover:to-coop-700 shadow-lg shadow-brand-600/30 hover:shadow-xl hover:shadow-brand-600/40 active:scale-95 transition-all"
-              >
-                <span>{t.finalCta.bookBtn}</span>
-                <ArrowRight className="w-5 h-5" />
-              </button>
-
+            {/* Right: Dual Action Buttons */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full lg:w-auto shrink-0">
+              
+              {/* Join as Worker */}
               <button
                 type="button"
                 onClick={() => onOpenModal('worker-join')}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-2xl text-base font-bold text-white bg-white/10 hover:bg-white/20 border-2 border-white/20 hover:border-white/30 active:scale-95 transition-all"
+                className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl text-sm font-bold text-white bg-brand-600 hover:bg-brand-700 shadow-md hover:shadow-lg active:scale-95 transition-all focus:outline-none"
               >
-                <HeartHandshake className="w-5 h-5 text-brand-300" />
-                <span>{t.finalCta.joinBtn}</span>
+                <UserCheck className="w-4 h-4" />
+                <span>Join as Worker</span>
               </button>
-            </div>
 
-            {/* Perks */}
-            <div className="pt-6 flex flex-wrap items-center justify-center gap-6 text-xs sm:text-sm text-slate-300 border-t border-slate-800">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                <span>{t.finalCta.perk1}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                <span>{t.finalCta.perk2}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                <span>{t.finalCta.perk3}</span>
-              </div>
+              {/* Join as Cooperative / Customer */}
+              <button
+                type="button"
+                onClick={() => onOpenModal('coop-register')}
+                className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl text-sm font-bold text-white bg-white/10 hover:bg-white/20 border border-white/25 active:scale-95 transition-all focus:outline-none"
+              >
+                <Building2 className="w-4 h-4 text-emerald-300" />
+                <span>Join as Cooperative / Customer</span>
+              </button>
+
             </div>
 
           </div>
 
         </div>
+
       </div>
     </section>
   );

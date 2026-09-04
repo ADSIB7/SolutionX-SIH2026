@@ -1,4 +1,4 @@
-﻿import { CooperativeStat, ComparisonItem, WorkerMember } from '../types';
+import { CooperativeStat, ComparisonItem, WorkerMember } from '../types';
 
 export const cooperativeStats: CooperativeStat[] = [
   {

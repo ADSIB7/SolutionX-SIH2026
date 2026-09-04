@@ -1,18 +1,19 @@
-﻿import React from 'react';
-import { 
-  ShieldCheck, 
-  ArrowRight, 
-  Users, 
-  MapPin, 
-  Star, 
-  CheckCircle2, 
-  Award, 
-  TrendingUp, 
+import React from 'react';
+import {
+  ShieldCheck,
+  ArrowRight,
+  Users,
+  MapPin,
+  Star,
+  CheckCircle2,
+  Award,
+  TrendingUp,
   HeartHandshake,
   Sparkles,
   Zap,
   Wrench,
-  Droplet
+  Droplet,
+  Building2
 } from 'lucide-react';
 import { Language, ModalType } from '../../types';
 import { translations } from '../../data/translations';
@@ -21,12 +22,14 @@ interface HeroSectionProps {
   currentLang: Language;
   onOpenModal: (type: ModalType) => void;
   onScrollToSearch: () => void;
+  onOpenBooking?: (prefill?: { serviceId?: string; location?: string; workerId?: string }) => void;
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
   currentLang,
   onOpenModal,
-  onScrollToSearch
+  onScrollToSearch,
+  onOpenBooking
 }) => {
   const t = translations[currentLang];
 
@@ -37,9 +40,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-brand-200/40 blur-3xl" />
         <div className="absolute top-48 -right-32 w-96 h-96 rounded-full bg-trust-200/40 blur-3xl" />
         <div className="absolute bottom-10 left-1/3 w-80 h-80 rounded-full bg-coop-200/30 blur-3xl" />
-        
+
         {/* Subtle geometric dot grid pattern */}
-        <div 
+        <div
           className="absolute inset-0 opacity-[0.25]"
           style={{
             backgroundImage: `radial-gradient(#0d9488 1px, transparent 1px)`,
@@ -50,10 +53,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          
+
           {/* Left Column: Hero Content & CTAs */}
           <div className="lg:col-span-7 flex flex-col items-start text-left space-y-6">
-            
+
             {/* SIH Cooperative Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold text-brand-800 bg-brand-100/80 border border-brand-200 shadow-sm animate-in fade-in slide-in-from-bottom-2 duration-300">
               <span className="flex h-2 w-2 relative">
@@ -87,7 +90,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto pt-2">
               <button
                 type="button"
-                onClick={() => onOpenModal('booking')}
+                onClick={() => onOpenBooking ? onOpenBooking() : onOpenModal('booking')}
                 className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-2xl text-base font-bold text-white bg-gradient-to-r from-brand-600 via-brand-700 to-coop-600 hover:from-brand-700 hover:to-coop-700 shadow-lg shadow-brand-600/25 hover:shadow-xl hover:shadow-brand-600/35 transform active:scale-95 transition-all"
               >
                 <span>{t.hero.bookBtn}</span>
@@ -99,7 +102,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 onClick={() => onOpenModal('worker-join')}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl text-base font-bold text-brand-800 bg-white hover:bg-brand-50/80 border-2 border-brand-200 hover:border-brand-300 shadow-sm transition-all"
               >
-                <HeartHandshake className="w-5 h-5 text-brand-600" />
+                <Building2 className="w-5 h-5 text-brand-600" />
                 <span>{t.hero.joinBtn}</span>
               </button>
             </div>
@@ -141,10 +144,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
           {/* Right Column: Interactive Modern Graphic Composition */}
           <div className="lg:col-span-5 relative">
-            
+
             {/* Visual Container */}
             <div className="relative mx-auto max-w-md lg:max-w-none bg-gradient-to-tr from-slate-900 via-slate-800 to-brand-950 rounded-3xl p-6 shadow-2xl text-white border border-slate-700/60 overflow-hidden">
-              
+
               {/* Map background matrix & radar ring */}
               <div className="absolute inset-0 opacity-20 pointer-events-none">
                 <svg className="w-full h-full" viewBox="0 0 400 400" fill="none">
@@ -171,9 +174,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
               {/* Interactive Visual: Connected Worker & Customer Node */}
               <div className="relative py-6 space-y-4">
-                
+
                 {/* Active Worker Profile Card (Floating node) */}
-                <div className="bg-slate-800/90 backdrop-blur-md p-4 rounded-2xl border border-slate-700 shadow-lg flex items-center justify-between">
+                <div
+                  onClick={() => onOpenBooking ? onOpenBooking({ workerId: 'w-ramesh-jadhav' }) : onOpenModal('booking')}
+                  className="bg-slate-800/90 hover:bg-slate-800/95 backdrop-blur-md p-4 rounded-2xl border border-slate-700 hover:border-brand-400 shadow-lg flex items-center justify-between cursor-pointer group/worker transition-all"
+                  title="Click to view credentials or request Ramesh directly"
+                >
                   <div className="flex items-center gap-3.5">
                     <div className="relative">
                       <img
@@ -205,7 +212,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="text-right">
                     <span className="text-[11px] text-slate-400 block">Dispatch Status</span>
                     <span className="inline-flex items-center gap-1 text-xs font-bold text-emerald-400 bg-emerald-950/60 px-2 py-1 rounded-lg border border-emerald-700/50 mt-1">
@@ -261,7 +268,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                       </span>
                     </div>
                   </div>
-                  <button 
+                  <button
                     onClick={() => onOpenModal('charter')}
                     className="text-[11px] font-semibold text-brand-300 hover:text-white underline decoration-brand-500"
                   >

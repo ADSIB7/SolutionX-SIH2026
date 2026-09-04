@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { 
   ShieldCheck, 
   HeartHandshake, 
@@ -164,7 +164,7 @@ export const WhyWorkerEMP: React.FC<WhyWorkerEMPProps> = ({
                   {t.whyCoop.compareHeading}
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-400 mt-1">
-                  SIH Problem Statement 26089: Transforming gig labor from algorithmic exploitation to collective prosperity.
+                  Transforming gig labor from algorithmic exploitation to collective prosperity.
                 </p>
               </div>
               <span className="px-3 py-1 rounded-full text-xs font-bold bg-brand-500 text-white self-start sm:self-auto">

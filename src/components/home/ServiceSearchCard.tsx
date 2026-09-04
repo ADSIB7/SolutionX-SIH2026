@@ -1,22 +1,14 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { 
   Search, 
   MapPin, 
-  Calendar, 
-  Clock, 
-  Sparkles, 
   ChevronRight,
   Crosshair,
-  Zap,
-  Droplet,
-  Hammer,
-  Paintbrush,
-  Wrench,
-  Check
+  Check,
+  Users
 } from 'lucide-react';
-import { Language, ModalType } from '../../types';
+import { Language } from '../../types';
 import { translations } from '../../data/translations';
-import { servicesData } from '../../data/servicesData';
 import { popularLocations } from '../../data/cooperativeData';
 
 interface ServiceSearchCardProps {
@@ -29,36 +21,34 @@ export const ServiceSearchCard: React.FC<ServiceSearchCardProps> = ({
   onOpenBooking
 }) => {
   const t = translations[currentLang];
-  const [selectedService, setSelectedService] = useState('electrician');
+  const [selectedTrade, setSelectedTrade] = useState('all');
   const [location, setLocation] = useState('Kothrud, Pune');
-  const [selectedDate, setSelectedDate] = useState('Today');
-  const [selectedSlot, setSelectedSlot] = useState('Immediate (within 45 mins)');
+  const [selectedSlot, setSelectedSlot] = useState('Immediate (within 30 mins)');
   const [showLocationDropdown, setShowLocationDropdown] = useState(false);
   const [locationDetecting, setLocationDetecting] = useState(false);
 
-  const quickPills = [
-    { label: 'Fan Repair', id: 'electrician' },
-    { label: 'Deep Cleaning', id: 'cleaning' },
-    { label: 'Tap Leakage', id: 'plumber' },
-    { label: 'Lock Fitting', id: 'carpenter' },
-    { label: 'AC Service', id: 'appliances' },
-    { label: 'Wall Paint', id: 'painting' }
+  const quickWorkerPills = [
+    { label: '⚡ Master Electricians', id: 'electrician' },
+    { label: '💧 Emergency Plumbers', id: 'plumber' },
+    { label: '✨ Deep Home Cleaners', id: 'cleaning' },
+    { label: '🔨 Precision Carpenters', id: 'carpenter' },
+    { label: '❄️ AC & Appliance Pros', id: 'appliances' },
+    { label: '🎨 Certified Painters', id: 'painting' }
   ];
 
   const handleDetectLocation = () => {
     setLocationDetecting(true);
     setTimeout(() => {
-      setLocation('Baner, Pune (Auto-detected)');
+      setLocation('Baner / Wakad, Pune');
       setLocationDetecting(false);
-    }, 600);
+    }, 500);
   };
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onOpenBooking({
-      serviceId: selectedService,
+      serviceId: selectedTrade,
       location,
-      date: selectedDate,
       timeSlot: selectedSlot
     });
   };
@@ -69,49 +59,31 @@ export const ServiceSearchCard: React.FC<ServiceSearchCardProps> = ({
         
         {/* Top Header & Cooperative Note */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 mb-4 border-b border-slate-100">
-          <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-brand-100 text-brand-700 flex items-center justify-center">
-              <Search className="w-4 h-4" />
+          <div className="flex items-center gap-2.5">
+            <div className="w-8 h-8 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center">
+              <Users className="w-4 h-4 text-brand-700" />
             </div>
-            <h3 className="text-base sm:text-lg font-bold text-slate-900">
-              {t.search.title}
-            </h3>
+            <div>
+              <h3 className="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2">
+                <span>{t.search.title}</span>
+                <span className="text-[10.5px] bg-brand-50 text-brand-700 border border-brand-200/80 px-2 py-0.5 rounded-full font-semibold hidden sm:inline">
+                  Worker-First Discovery
+                </span>
+              </h3>
+            </div>
           </div>
           <span className="text-xs font-semibold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200 inline-flex items-center gap-1.5 self-start sm:self-auto">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse" />
-            <span>Zero Platform Surge • Verified Cooperative Rates</span>
+            <span>Zero Algorithmic Surge • 88% Direct Payout to Worker-Owners</span>
           </span>
         </div>
 
-        {/* Search Booking Form */}
+        {/* Worker Discovery Search Form */}
         <form onSubmit={handleSearchSubmit}>
           <div className="grid grid-cols-1 md:grid-cols-12 gap-3 lg:gap-4">
             
-            {/* Field 1: Service Selector */}
-            <div className="md:col-span-4 bg-slate-50 hover:bg-slate-100/80 transition-colors p-3 rounded-2xl border border-slate-200/80 focus-within:ring-2 focus-within:ring-brand-500/20 focus-within:border-brand-500">
-              <label className="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">
-                {t.search.serviceLabel}
-              </label>
-              <div className="flex items-center gap-2">
-                <select
-                  value={selectedService}
-                  onChange={(e) => setSelectedService(e.target.value)}
-                  className="w-full bg-transparent text-sm font-semibold text-slate-800 focus:outline-none cursor-pointer py-0.5"
-                >
-                  {servicesData.map((s) => {
-                    const localizedName = currentLang === 'hi' ? s.hindiName : currentLang === 'mr' ? s.marathiName : s.name;
-                    return (
-                      <option key={s.id} value={s.id}>
-                        {localizedName} (From ₹{s.minPrice})
-                      </option>
-                    );
-                  })}
-                </select>
-              </div>
-            </div>
-
-            {/* Field 2: Location Input */}
-            <div className="md:col-span-4 relative bg-slate-50 hover:bg-slate-100/80 transition-colors p-3 rounded-2xl border border-slate-200/80 focus-within:ring-2 focus-within:ring-brand-500/20 focus-within:border-brand-500">
+            {/* Field 1: Locality Input (Worker-first location priority) */}
+            <div className="md:col-span-5 relative bg-slate-50 hover:bg-slate-100/80 transition-colors p-3 rounded-2xl border border-slate-200/80 focus-within:ring-2 focus-within:ring-brand-500/20 focus-within:border-brand-500">
               <div className="flex items-center justify-between mb-1">
                 <label className="block text-[11px] font-bold text-slate-500 uppercase tracking-wider">
                   {t.search.locationLabel}
@@ -141,9 +113,9 @@ export const ServiceSearchCard: React.FC<ServiceSearchCardProps> = ({
               {showLocationDropdown && (
                 <div className="absolute left-0 right-0 top-full mt-2 bg-white rounded-2xl shadow-card border border-slate-200 p-2 z-30 max-h-48 overflow-y-auto">
                   <div className="px-3 py-1 text-[10px] font-bold text-slate-400 uppercase tracking-wider">
-                    Popular Cooperative Ward Hubs
+                    Nearby Cooperative Ward Hubs
                   </div>
-                  {popularLocations.map((loc) => (
+                  {popularLocations.slice(0, 7).map((loc) => (
                     <button
                       type="button"
                       key={loc}
@@ -164,32 +136,35 @@ export const ServiceSearchCard: React.FC<ServiceSearchCardProps> = ({
               )}
             </div>
 
-            {/* Field 3: Date & Slot Selector */}
-            <div className="md:col-span-2 bg-slate-50 hover:bg-slate-100/80 transition-colors p-3 rounded-2xl border border-slate-200/80 focus-within:ring-2 focus-within:ring-brand-500/20 focus-within:border-brand-500">
+            {/* Field 2: Trade / Skill Category */}
+            <div className="md:col-span-4 bg-slate-50 hover:bg-slate-100/80 transition-colors p-3 rounded-2xl border border-slate-200/80 focus-within:ring-2 focus-within:ring-brand-500/20 focus-within:border-brand-500">
               <label className="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">
-                {t.search.dateTimeLabel}
+                {t.search.serviceLabel}
               </label>
               <div className="flex items-center gap-2">
-                <Calendar className="w-4 h-4 text-brand-600 shrink-0" />
                 <select
-                  value={selectedDate}
-                  onChange={(e) => setSelectedDate(e.target.value)}
+                  value={selectedTrade}
+                  onChange={(e) => setSelectedTrade(e.target.value)}
                   className="w-full bg-transparent text-sm font-semibold text-slate-800 focus:outline-none cursor-pointer py-0.5"
                 >
-                  <option value="Today">Today (Immediate)</option>
-                  <option value="Tomorrow">Tomorrow</option>
-                  <option value="Weekend Slot">Weekend Slot</option>
-                  <option value="Select Custom">Custom Schedule</option>
+                  <option value="all">All Skilled Trades (Nearest Workers)</option>
+                  <option value="electrician">Electricians (From ₹249)</option>
+                  <option value="plumber">Plumbers (From ₹229)</option>
+                  <option value="cleaning">Cleaners & Sanitation (From ₹349)</option>
+                  <option value="carpenter">Carpenters & Woodwork (From ₹299)</option>
+                  <option value="appliances">AC & Appliance Technicians (From ₹349)</option>
+                  <option value="painting">Painters & Waterproofer (From ₹399)</option>
                 </select>
               </div>
             </div>
 
-            {/* Field 4: Action Button */}
-            <div className="md:col-span-2 flex items-center">
+            {/* Field 3: Action Button */}
+            <div className="md:col-span-3 flex items-center">
               <button
                 type="submit"
                 className="w-full h-full min-h-[52px] inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl text-sm font-bold text-white bg-gradient-to-r from-brand-600 to-coop-600 hover:from-brand-700 hover:to-coop-700 shadow-md shadow-brand-600/25 active:scale-95 transition-all"
               >
+                <Search className="w-4 h-4" />
                 <span>{t.search.findBtn}</span>
                 <ChevronRight className="w-4 h-4" />
               </button>
@@ -203,17 +178,17 @@ export const ServiceSearchCard: React.FC<ServiceSearchCardProps> = ({
           <span className="text-xs font-semibold text-slate-500">
             {t.search.quickTagsLabel}
           </span>
-          {quickPills.map((pill) => (
+          {quickWorkerPills.map((pill) => (
             <button
               key={pill.label}
               type="button"
               onClick={() => {
-                setSelectedService(pill.id);
+                setSelectedTrade(pill.id);
                 onOpenBooking({ serviceId: pill.id, location });
               }}
-              className="px-2.5 py-1 text-xs rounded-full bg-slate-100 hover:bg-brand-50 text-slate-700 hover:text-brand-800 border border-slate-200/70 hover:border-brand-300 transition-all font-medium"
+              className="px-3 py-1 text-xs rounded-full bg-slate-100 hover:bg-brand-50 text-slate-700 hover:text-brand-800 border border-slate-200/70 hover:border-brand-300 transition-all font-medium flex items-center gap-1"
             >
-              {pill.label}
+              <span>{pill.label}</span>
             </button>
           ))}
         </div>

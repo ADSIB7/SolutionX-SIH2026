@@ -1,10 +1,10 @@
-﻿import React from 'react';
-import { 
-  ShieldCheck, 
-  HeartHandshake, 
-  MapPin, 
-  Phone, 
-  Mail, 
+import React from 'react';
+import {
+  ShieldCheck,
+  HeartHandshake,
+  MapPin,
+  Phone,
+  Mail,
   ExternalLink,
   Award,
   Users
@@ -25,14 +25,14 @@ export const Footer: React.FC<FooterProps> = ({
 
   return (
     <footer className="bg-slate-900 text-slate-300 border-t border-slate-800">
-      
+
       {/* Top Banner: SIH 26089 Statement Reference */}
       <div className="bg-slate-950/80 border-b border-slate-800/80 py-4 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
           <div className="flex items-center gap-2 text-slate-400">
             <span className="w-2 h-2 rounded-full bg-emerald-500" />
-            <span className="font-semibold text-slate-200">Smart India Hackathon 2026:</span>
-            <span>Problem Statement 26089 • Cooperative Gig-Services Platform</span>
+            <span className="font-semibold text-slate-200">Rojgar Platform:</span>
+            <span>Worker-Owned Cooperative Gig-Services Platform</span>
           </div>
           <div className="flex items-center gap-4 text-slate-400">
             <span>Multi-State Cooperative Societies Framework</span>
@@ -49,7 +49,7 @@ export const Footer: React.FC<FooterProps> = ({
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
-          
+
           {/* Col 1: Brand & Ethos */}
           <div className="lg:col-span-2 space-y-4">
             <a href="#" className="flex items-center gap-2.5">

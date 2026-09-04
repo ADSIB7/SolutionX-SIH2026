@@ -1,10 +1,10 @@
-﻿import React from 'react';
-import { 
-  Sparkles, 
-  Search, 
-  UserCheck, 
-  ShieldCheck, 
-  HeartHandshake, 
+import React from 'react';
+import {
+  Sparkles,
+  Search,
+  UserCheck,
+  ShieldCheck,
+  HeartHandshake,
   ArrowRight,
   CreditCard,
   Star,
@@ -31,7 +31,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({
       desc: t.howItWorks.step1Desc,
       icon: <Search className="w-6 h-6 text-brand-600" />,
       color: 'bg-brand-50 border-brand-200 text-brand-700',
-      badge: 'Zero Surge Fee'
+      badge: 'Local Ward Hub'
     },
     {
       num: '02',
@@ -39,7 +39,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({
       desc: t.howItWorks.step2Desc,
       icon: <UserCheck className="w-6 h-6 text-trust-600" />,
       color: 'bg-trust-50 border-trust-200 text-trust-700',
-      badge: 'Local Ward Hub'
+      badge: 'Verified Co-Owners'
     },
     {
       num: '03',
@@ -47,7 +47,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({
       desc: t.howItWorks.step3Desc,
       icon: <ShieldCheck className="w-6 h-6 text-coop-600" />,
       color: 'bg-coop-50 border-coop-200 text-coop-700',
-      badge: '88% Direct Payout'
+      badge: '5-Min Window'
     },
     {
       num: '04',
@@ -55,14 +55,14 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({
       desc: t.howItWorks.step4Desc,
       icon: <Award className="w-6 h-6 text-amber-600" />,
       color: 'bg-amber-50 border-amber-200 text-amber-700',
-      badge: 'Patronage Dividend'
+      badge: '88% Direct Payout'
     }
   ];
 
   return (
     <section id="how-it-works" className="py-20 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold text-brand-800 bg-brand-100/90 border border-brand-200 mb-3 shadow-sm">
@@ -79,7 +79,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({
 
         {/* 4 Steps Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
-          
+
           {/* Connector line for desktop */}
           <div className="hidden lg:block absolute top-1/3 left-12 right-12 h-0.5 bg-gradient-to-r from-brand-200 via-trust-200 to-coop-200 -z-0" />
 
@@ -134,7 +134,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({
           <div className="space-y-1 text-center md:text-left">
             <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-300">
               <HeartHandshake className="w-4 h-4" />
-              <span>SIH Cooperative Model 26089</span>
+              <span>Rojgar Cooperative Model</span>
             </div>
             <h3 className="text-xl sm:text-2xl font-bold">
               Fair for Customers. Transformative for Workers.
@@ -147,17 +147,17 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({
           <div className="flex items-center gap-3 shrink-0">
             <button
               type="button"
-              onClick={() => onOpenModal('booking')}
+              onClick={() => onOpenModal('worker-join')}
               className="px-5 py-3 rounded-xl font-bold text-sm bg-brand-500 hover:bg-brand-600 text-white shadow-md transition-all active:scale-95"
             >
-              Book First Service
+              Enroll Cooperative
             </button>
             <button
               type="button"
               onClick={() => onOpenModal('charter')}
               className="px-5 py-3 rounded-xl font-bold text-sm bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-all"
             >
-              Read Bye-Laws
+              Read Model Charter
             </button>
           </div>
         </div>

@@ -1,11 +1,11 @@
-﻿import React from 'react';
-import { 
-  X, 
-  ShieldCheck, 
-  Scale, 
-  Award, 
-  Vote, 
-  CheckCircle2, 
+import React, { useEffect } from 'react';
+import {
+  X,
+  ShieldCheck,
+  Scale,
+  Award,
+  Vote,
+  CheckCircle2,
   FileText,
   HeartHandshake,
   TrendingUp
@@ -22,12 +22,24 @@ export const CharterModal: React.FC<CharterModalProps> = ({
   onClose,
   onOpenWorkerJoin
 }) => {
+  // Modal accessibility: Escape key listener
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-200">
       <div className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden max-h-[92vh] flex flex-col">
-        
+
         {/* Header */}
         <div className="px-6 py-4 bg-gradient-to-r from-brand-900 via-slate-900 to-trust-950 text-white flex items-center justify-between">
           <div className="flex items-center gap-2.5">
@@ -35,8 +47,8 @@ export const CharterModal: React.FC<CharterModalProps> = ({
               <FileText className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="text-base font-bold">WorkerEMP Cooperative Model Charter</h3>
-              <p className="text-xs text-brand-300">Under SIH Problem Statement 26089 Principles</p>
+              <h3 className="text-base font-bold">Rojgar Cooperative Model Charter</h3>
+              <p className="text-xs text-brand-300">Democratic Worker-Owned Platform Principles</p>
             </div>
           </div>
           <button
@@ -48,7 +60,7 @@ export const CharterModal: React.FC<CharterModalProps> = ({
         </div>
 
         <div className="p-6 overflow-y-auto space-y-5 text-sm text-slate-700">
-          
+
           {/* Article 1 */}
           <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-1.5">
             <div className="flex items-center gap-2 font-bold text-slate-900 text-sm">
@@ -106,7 +118,7 @@ export const CharterModal: React.FC<CharterModalProps> = ({
               }}
               className="px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold shrink-0 transition-colors"
             >
-              Enroll as Member
+              Register Cooperative
             </button>
           </div>
 
